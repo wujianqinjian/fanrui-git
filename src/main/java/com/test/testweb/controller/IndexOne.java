@@ -8,7 +8,7 @@ public class IndexOne {
 
     @RequestMapping("/index")
     public String index(){
-        System.out.println("这是开发人员提交的");
+
         return "index page";
     }
 
