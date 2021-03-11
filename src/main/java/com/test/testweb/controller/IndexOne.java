@@ -8,6 +8,7 @@ public class IndexOne {
 
     @RequestMapping("/index")
     public String index(){
+
         return "index page";
     }
 
