@@ -1,0 +1,22 @@
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+    static-path-pattern: /res/**
+    #  messages:
+#    cache-duration: 222
+
+
+
+
+
+
+schemetype:
+  typeId: 1
+  typeName: live
+  scheme:
+    schemeId: 1
+    schemeName: 早餐一
+    schemeDesc: 时间比较充足的情况可以选择碧海湾的水煎包
+
