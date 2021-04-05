@@ -2,7 +2,8 @@ package com.test.testweb;
 
 import com.test.testweb.bean.Note;
 import com.test.testweb.bean.Records;
-import lombok.extern.slf4j.XSlf4j;
+//import lombok.extern.slf4j.XSlf4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
@@ -15,7 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.SpringVersion;
 import org.springframework.stereotype.Component;
 
-//@XSlf4j
+@Slf4j
 @EnableCaching
 @SpringBootConfiguration
 @ComponentScan("com.test.testweb")
@@ -28,8 +29,9 @@ public class TestwebApplication {
     Records records;
 
     public static void main(String[] args) {
-
+        log.info("项目正常启动");
         SpringApplication.run(TestwebApplication.class,args);
+
 
 
 /*       ConfigurableApplicationContext run=  SpringApplication.run(TestwebApplication.class, args);
