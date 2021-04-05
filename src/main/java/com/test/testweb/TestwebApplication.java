@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -15,6 +16,7 @@ import org.springframework.core.SpringVersion;
 import org.springframework.stereotype.Component;
 
 //@XSlf4j
+@EnableCaching
 @SpringBootConfiguration
 @ComponentScan("com.test.testweb")
 @EnableAutoConfiguration

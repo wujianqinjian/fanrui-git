@@ -6,10 +6,7 @@ spring:
     static-path-pattern: /res/**
     #  messages:
 #    cache-duration: 222
-
-
-
-
+  
 
 
 schemetype:

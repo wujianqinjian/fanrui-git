@@ -16,29 +16,11 @@
 
 </head>
 <body>
-    <form action="/schemetype" method="post">
-        <!--<input name="_method" type="hidden" value="submit">-->
-        <input value="save-提交" type="submit">
+    <form action="/testlogin" method="post">
+        用户名：<input name="userName" />
+        密码：<input  password="password" />
+        <input value="提交" type="submit" />
     </form>
-    <form action="/schemetype" method="post">
-        <input name="_method" type="hidden" value="DELETE">
-        <input value="delete-提交" type="submit">
-    </form>
-    <form action="/schemetype" method="post">
-        <input name="_method" type="hidden" value="PUT">
-        <input value="update-提交" type="submit">
-    </form>
-    <form action="/schemetype" method="get">
-        <input value="提交" type="submit">
-    </form>
-
-
-    <div id="app">
-        <el-button @click="visible = true">Button</el-button>
-        <el-dialog :visible.sync="visible" title="Hello world">
-            <p>Try Element</p>
-        </el-dialog>
-    </div>
     <script>
         new Vue({
             el: '#app',

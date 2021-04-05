@@ -18,14 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RecordsController {
 
+    
     @Autowired
     Records records;
 
     @RequestMapping("/record")
-    public Records records(){
+    public Records records() {
         log.info(records.getTitle());
         log.info(records.getScheme());
-        log.info(records.getRecordId()+"");
+        log.info(records.getRecordId() + "");
         return records;
     }
 }
