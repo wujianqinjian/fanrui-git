@@ -4,9 +4,14 @@ spring:
       filter:
         enabled: true
     static-path-pattern: /res/**
-    #  messages:
-#    cache-duration: 222
-  
+  datasource:
+    url: jdbc:mysql://localhost:3306/fanrui_fanan
+    username: root
+    password: Ma__123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jdbc:
+    template:
+      query-timeout: 5
 
 
 schemetype:

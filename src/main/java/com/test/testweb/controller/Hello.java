@@ -3,7 +3,9 @@ package com.test.testweb.controller;
 import com.sun.tracing.dtrace.Attributes;
 import com.test.testweb.bean.Scheme;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +13,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.sql.DataSource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -21,6 +25,31 @@ import java.util.Map;
 @Slf4j
 @Controller
 public class Hello {
+
+
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    DataSource dataSource;
+
+/*    @GetMapping("/testmysqldata")
+    public Object getScheme(){
+
+        List<Map<String,Object>> list= jdbcTemplate.queryForList("select * from fanan_list where id = 1");
+        System.out.println(list.size());
+        Map<String,Object> map= new HashMap();
+        map=list.get(0);
+        Object name = map.get("name");
+
+        return name;
+    }*/
+
+
+
+
+
     //test
     @RequestMapping("/hello")
     public String hello(@RequestParam("29_name") String test_29_name){
@@ -76,7 +105,7 @@ public class Hello {
     }
 
     //测试attribute
-    @GetMapping("/gotoother")
+    @GetMapping("/gotother")
     public String goToOtherPage(HttpServletRequest request){
         request.setAttribute("msg","转发成功");
         request.setAttribute("code",200);
@@ -90,9 +119,12 @@ public class Hello {
         request.setAttribute("new1","测试添加属性");
         Object cmd=request.getAttribute("new1");
         Object msg1= request.getAttribute("msg");
-
         return cmd;
     }
+
+
+
+
 
 
 

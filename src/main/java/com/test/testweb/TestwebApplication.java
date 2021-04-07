@@ -16,6 +16,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.SpringVersion;
 import org.springframework.stereotype.Component;
 
+import javax.sql.DataSource;
+
 @Slf4j
 @EnableCaching
 @SpringBootConfiguration
@@ -27,6 +29,7 @@ public class TestwebApplication {
 
     @Autowired
     Records records;
+
 
     public static void main(String[] args) {
         log.info("项目启动");
