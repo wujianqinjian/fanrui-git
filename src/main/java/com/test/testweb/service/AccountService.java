@@ -2,6 +2,7 @@ package com.test.testweb.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.test.testweb.bean.Account;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 

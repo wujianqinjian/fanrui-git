@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/account")
 public class AccountController {
+
   @Autowired
     private AccountMapper accountMapper;
 
