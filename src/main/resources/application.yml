@@ -3,56 +3,15 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
-#    static-path-pattern: /
+    static-path-pattern: /res/**
   datasource:
-    #druid:
-    #url: jdbc:mysql://sh-cynosdbmysql-grp-fl3phwrg.sql.tencentcdb.com:24956/bansheedata?useUnicode=true&characterEncoding=UTF-8
-    url:  jdbc:mysql://sh-cdb-nw5c3mde.sql.tencentcdb.com:59935/bansheedata?useUnicode=true&characterEncoding=UTF-8
-    username: fanrui
-    password: Ma__123456
+    url: jdbc:mysql://localhost:3306/fanrui_fanan
+    username: root
+    password: 
     driver-class-name: com.mysql.cj.jdbc.Driver
-    maximum-pool-size: 500
-
-mybatis:
-  config-location: classpath:mybatis/mybatis-config.xml
-  mapper-location: classpath:mybatis/mapper/*.xml
-  configuration:
-    map-underscore-to-camel-case: true
-  type-aliases-package: com.test.testweb.bean
-#    druid:
-
-#  jdbc:
-#    template:
-#      query-timeout: 10
-#  jpa:
-#    #开启逆向工程
-#    #正向：通过实体类生成数据表
-#    #逆向：通过数据表生成实体类
-#    #generate-ddl: true
-#    show-sql: true
-#    properties:
-#      hibernate:
-#        format_sql: true
-
-
-
-
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
-
-swagger:
-  enable: true
-
-
-server:
-  port: 443
-  custom:
-    httpPort: 8080
-  ssl:
-    key-store: classpath:naomihsu.xyz.jks
-    key-store-password: 791i52w1qa4g
-    key-store-type: JKS
+  jdbc:
+    template:
+      query-timeout: 5
 
 
 schemetype:
@@ -62,9 +21,4 @@ schemetype:
     schemeId: 1
     schemeName: 早餐一
     schemeDesc: 时间比较充足的情况可以选择碧海湾的水煎包
-
-
-    #server.ssl.key-store:classpath:naomihsu.xyz.jks
-    #server.ssl.key-password:"791i52w1qa4g"
-    #server.ssl.key-store-type=jks
 
