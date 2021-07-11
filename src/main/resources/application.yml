@@ -5,9 +5,9 @@ spring:
         enabled: true
     static-path-pattern: /res/**
   datasource:
-    url: jdbc:mysql://localhost:3306/fanrui_fanan
+    url: jdbc:mysql://sh-cynosdbmysql-grp-fl3phwrg.sql.tencentcdb.com:24956/bansheedata
     username: root
-    password: 
+    password: Ma__123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   jdbc:
     template:
