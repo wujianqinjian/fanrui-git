@@ -33,7 +33,7 @@ public class AccountServiceImp implements AccountService {
 
     @Override
     public void deleteAccount(Integer id) {
-
+        System.out.println("test");
     }
 
     @Override
