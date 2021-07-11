@@ -6,6 +6,7 @@ import com.test.testweb.bean.Scheme;
 import com.test.testweb.bean.SchemeType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -18,6 +19,9 @@ public class SchemeTypeController {
 
     @Autowired
     SchemeType schemeType;
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
 
     @PostMapping("/schemetype")
     //@RequestMapping(value = "/schemetype",method = RequestMethod.POST)

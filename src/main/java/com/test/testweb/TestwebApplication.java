@@ -1,38 +1,43 @@
 package com.test.testweb;
 
-import com.test.testweb.bean.Note;
 import com.test.testweb.bean.Records;
 //import lombok.extern.slf4j.XSlf4j;
+import com.test.testweb.mapper.AccountMapper;
+import com.test.testweb.service.AccountService;
 import lombok.extern.slf4j.Slf4j;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.core.SpringVersion;
-import org.springframework.stereotype.Component;
-
-import javax.sql.DataSource;
+import springfox.documentation.oas.annotations.EnableOpenApi;
 
 @Slf4j
 @EnableCaching
 @SpringBootConfiguration
 @ComponentScan("com.test.testweb")
 @EnableAutoConfiguration
+@EnableOpenApi
+@MapperScan("com.test.testweb.mapper")
 public class TestwebApplication {
-
 
 
     @Autowired
     Records records;
 
+    @Autowired
+    private AccountMapper mapper;
+
+
+
+
+
 
     public static void main(String[] args) {
         log.info("项目启动");
+
         SpringApplication.run(TestwebApplication.class,args);
 
 

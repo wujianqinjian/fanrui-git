@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +29,7 @@ import java.util.Map;
  */
 @Slf4j
 @RestController
+@RequestMapping("ccc")
 public class RecordsController {
 
 
@@ -46,10 +48,10 @@ public class RecordsController {
     }
 
     @ResponseBody
-    @RequestMapping("/testmysqldata")
-    public Map getScheme() {
+    @RequestMapping("/testmysqldata/{id}")
+    public Map getScheme(@PathVariable("id") Integer id) {
 
-        List<Map<String, Object>> list = jdbcTemplate.queryForList("select * from fanan_list where id = 1");
+        List<Map<String, Object>> list = jdbcTemplate.queryForList("select * from banshee where id = 16437");
         System.out.println(list.get(0));
         Map<String,Object> map= list.get(0);
         System.out.println();
@@ -59,7 +61,8 @@ public class RecordsController {
     @ResponseBody
     @RequestMapping("/testsqlmonitoring")
     public String testqueryFromDb(){
-        Long testalong=jdbcTemplate.queryForObject("select count(*) from fan_user",long.class);
+        Long testalong=jdbcTemplate.queryForObject("select count(*) from bansheedata.banshee",long.class);
+        log.info("数据总量"+testalong);
         return testalong.toString();
     }
 }

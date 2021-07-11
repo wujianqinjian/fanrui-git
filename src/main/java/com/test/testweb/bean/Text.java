@@ -2,6 +2,8 @@ package com.test.testweb.bean;
 
 
 import lombok.*;
+import org.springframework.context.annotation.Bean;
+
 
 @EqualsAndHashCode
 @NoArgsConstructor
@@ -10,6 +12,7 @@ import lombok.*;
 @Data
 public class Text {
     private String text;
+
 
 
     public static void main(String[] args) {

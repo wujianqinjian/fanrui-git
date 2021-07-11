@@ -34,20 +34,30 @@ public class Hello {
     @Autowired
     DataSource dataSource;
 
-/*    @GetMapping("/testmysqldata")
+    @GetMapping("/testmysqldata")
     public Object getScheme(){
 
-        List<Map<String,Object>> list= jdbcTemplate.queryForList("select * from fanan_list where id = 1");
+        List<Map<String,Object>> list= jdbcTemplate.queryForList("select * from fanan_list where id < 16500");
         System.out.println(list.size());
         Map<String,Object> map= new HashMap();
         map=list.get(0);
         Object name = map.get("name");
 
         return name;
-    }*/
+    }
 
 
+    @RequestMapping("/main")
+    public String mainTest(){
+        log.info("请求main");
+        return  "main";
+    }
 
+    @RequestMapping("/login")
+    public String loginTest(){
+        log.info("请求login");
+        return  "login";
+    }
 
 
     //test
