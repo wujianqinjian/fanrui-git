@@ -12,7 +12,17 @@ spring:
   jdbc:
     template:
       query-timeout: 5
+server:
+  port: 443
+  custom:
+    httpPort: 8082
+  ssl:
+    key-store: classpath:naomihsu.xyz.jks
+    key-store-password: 04289h76w61u2
+    key-store-type: JKS
 
+swagger:
+  enable: true
 
 schemetype:
   typeId: 1
